@@ -6,7 +6,7 @@ async function listaVideos() {
 }
 
 async function criaVideo(titulo, descricao, url, imagem) {
-  const conexao = await fetch("http://localhost/3000-video", {
+  const conexao = await fetch("http://localhost:3000/videos", {
     method: "POST",
     headers: {
       "Content-type": "aplication/json",
@@ -19,7 +19,7 @@ async function criaVideo(titulo, descricao, url, imagem) {
     })
   });
 
-  const conexaoConvertida = await conexao.json();
+  const conexaoConvertida = conexao.json();
 
   return conexaoConvertida;
 }
